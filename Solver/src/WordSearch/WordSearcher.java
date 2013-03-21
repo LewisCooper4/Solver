@@ -4,6 +4,9 @@
  */
 package WordSearch;
 
+import edu.moravian.Lexicon;
+import edu.moravian.Location;
+import edu.moravian.WordPath;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,14 +14,14 @@ import java.util.Set;
  *
  * @author Lewis
  */
-public class Searcher {
+public class WordSearcher {
     
     private int dimensions;
     private Lexicon lex;    
-    private Board board;
+    private WordSearchBoard board;
     private Set<String> words;
     
-    public Searcher(int dimensions, Lexicon lex, Board board) {
+    public WordSearcher(int dimensions, Lexicon lex, WordSearchBoard board) {
         
         this.dimensions = dimensions;
         this.lex = lex;

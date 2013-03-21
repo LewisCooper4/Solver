@@ -1,4 +1,6 @@
-package WordSearch;
+package Boggle;
+
+import java.lang.IllegalStateException;
 
 public class WordPath {
  

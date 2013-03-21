@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package WordSearch;
+package Boggle;
 
 /**
  *
@@ -14,6 +14,12 @@ public class Location {
     private int col;
     
     public Location(int r, int c) {
+        
+        if(r > 3 || r < 0 || c > 3 || c < 0) {
+            
+            throw new IllegalArgumentException("That location does not exist");
+            
+        } 
             
         row = r;
         col = c;        
