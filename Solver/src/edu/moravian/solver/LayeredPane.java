@@ -8,7 +8,7 @@ package edu.moravian.solver;
  *
  * @author Lewis
  */
-public class LayeredPane extends javax.swing.JFrame {
+public class  LayeredPane extends javax.swing.JFrame {
 
     /**
      * Creates new form LayeredPane
