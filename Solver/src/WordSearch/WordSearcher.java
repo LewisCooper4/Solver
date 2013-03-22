@@ -4,9 +4,9 @@
  */
 package WordSearch;
 
-import edu.moravian.Lexicon;
-import edu.moravian.Location;
-import edu.moravian.WordPath;
+import Boggle.Lexicon;
+import Boggle.Location;
+import Boggle.WordPath;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -65,7 +65,7 @@ public class WordSearcher {
         i = 0;
         wp = new WordPath();
         wp.push(startLetter);
-        while (lex.isPrefix(wp.getWord()) && row + i != dimensions) {
+        while (lex.isPrefix(wp.getWord()) && row + i != dimensions-1) {
             i++;
             loc = new Location(row + i, col);
             wp.push(board.getLetter(loc));
@@ -78,7 +78,7 @@ public class WordSearcher {
         i = 0;
         wp = new WordPath();
         wp.push(startLetter);
-        while (lex.isPrefix(wp.getWord()) && col + i != dimensions) {
+        while (lex.isPrefix(wp.getWord()) && col + i != dimensions-1) {
             i++;
             loc = new Location(row, col + i);
             wp.push(board.getLetter(loc));
@@ -104,7 +104,7 @@ public class WordSearcher {
         i = 0;
         wp = new WordPath();
         wp.push(startLetter);
-        while (lex.isPrefix(wp.getWord()) && row + i != dimensions && col - i != 0) {
+        while (lex.isPrefix(wp.getWord()) && row + i != dimensions-1 && col - i != 0) {
             i++;
             loc = new Location(row + i, col - i);
             wp.push(board.getLetter(loc));
@@ -117,7 +117,7 @@ public class WordSearcher {
         i = 0;
         wp = new WordPath();
         wp.push(startLetter);
-        while (lex.isPrefix(wp.getWord()) && row + i != dimensions && col + i != dimensions) {
+        while (lex.isPrefix(wp.getWord()) && row + i != dimensions-1 && col + i != dimensions-1) {
             i++;
             loc = new Location(row + i, col + i);
             wp.push(board.getLetter(loc));
@@ -130,7 +130,7 @@ public class WordSearcher {
         i = 0;
         wp = new WordPath();
         wp.push(startLetter);
-        while (lex.isPrefix(wp.getWord()) && row - i != 0 && col + i != dimensions) {
+        while (lex.isPrefix(wp.getWord()) && row - i != 0 && col + i != dimensions-1) {
             i++;
             loc = new Location(row - i, col + i);
             wp.push(board.getLetter(loc));
@@ -152,6 +152,14 @@ public class WordSearcher {
             }
         }
         
+    }
+    
+    public Iterable<String> getWords() {
+        return words;
+    }
+    
+    public int getSize() {
+        return words.size();
     }
     
 }

@@ -4,7 +4,7 @@
  */
 package WordSearch;
 
-import edu.moravian.Location;
+import Boggle.Location;
 
 /**
  *
