@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="Solve" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="Games" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="196" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="Word" pref="305" max="32767" attributes="0"/>
+                  <Component id="Pane" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+              <Component id="Games" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="Pane" min="-2" pref="239" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="Word" pref="121" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="Solve" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JComboBox" name="Games">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="Boggle"/>
+            <StringItem index="1" value="Word Search"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GamesActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JLayeredPane" name="Pane">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="opaque" type="boolean" value="true"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="BoggleBoard">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
+              <JLayeredPaneConstraints x="0" y="0" width="310" height="240" layer="0" position="-1"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="Char30" alignment="1" pref="47" max="32767" attributes="0"/>
+                          <Component id="Char10" alignment="1" max="32767" attributes="0"/>
+                          <Component id="Char20" alignment="1" max="32767" attributes="0"/>
+                          <Component id="Char00" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="Char01" alignment="0" pref="47" max="32767" attributes="0"/>
+                                  <Component id="Char11" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Char12" min="-2" pref="47" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="Char13" min="-2" pref="47" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="Char02" min="-2" pref="47" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="Char03" min="-2" pref="47" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="Char21" alignment="0" pref="47" max="32767" attributes="0"/>
+                                  <Component id="Char31" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="Char22" alignment="0" pref="47" max="32767" attributes="0"/>
+                                  <Component id="Char32" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="Char23" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                                  <Component id="Char33" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Char00" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char01" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char02" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char03" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Char10" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char11" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char12" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Char21" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char20" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char22" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char23" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Char30" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char31" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char32" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Char33" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="116" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JTextField" name="Char00">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Char00ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char01">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Char01ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char02">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Char02ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char03">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char10">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char11">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char12">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char13">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char20">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char21">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char22">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char23">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char30">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char31">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char32">
+            </Component>
+            <Component class="javax.swing.JTextField" name="Char33">
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="WordSearchBoard">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JLayeredPaneSupportLayout$JLayeredPaneConstraintsDescription">
+              <JLayeredPaneConstraints x="0" y="0" width="290" height="260" layer="0" position="-1"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="Let20" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let21" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let22" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let23" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let24" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let25" min="-2" pref="25" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="Let30" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let31" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let32" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let33" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let34" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let35" min="-2" pref="25" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="Let00" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let01" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let02" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let03" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let04" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let05" min="-2" pref="25" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="Let10" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let11" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let12" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let13" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let14" min="-2" pref="25" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="Let15" min="-2" pref="25" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="Let50" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="Let40" alignment="0" pref="25" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="Let41" alignment="0" pref="25" max="32767" attributes="0"/>
+                                  <Component id="Let51" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="Let42" alignment="0" pref="25" max="32767" attributes="0"/>
+                                  <Component id="Let52" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="Let43" alignment="0" pref="25" max="32767" attributes="0"/>
+                                  <Component id="Let53" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="Let44" alignment="0" pref="25" max="32767" attributes="0"/>
+                                  <Component id="Let54" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="Let45" pref="25" max="32767" attributes="0"/>
+                                  <Component id="Let55" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="100" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Let00" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let01" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let02" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let03" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let04" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let05" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="Let10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Let11" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Let12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Let13" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="Let14" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Let15" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Let20" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let21" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let22" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let23" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let24" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let25" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Let30" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let31" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let32" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let33" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let34" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let35" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Let40" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let41" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let42" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let43" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let44" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let45" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="Let50" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let51" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let52" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let53" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let54" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="Let55" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="99" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JTextField" name="Let00">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let01">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let02">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let03">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let04">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Let04ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let05">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let15">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let14">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let13">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let12">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let11">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let10">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let20">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let21">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let22">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let23">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let24">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let25">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let30">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let31">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let32">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let33">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let34">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let35">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let40">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let41">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let42">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let43">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let44">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let45">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let50">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let51">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="h"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let52">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="e"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let53">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="l"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let54">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="l"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="Let55">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="o"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="Solve">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Solve"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SolveActionPerformed"/>
+      </Events>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="Word">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="Words">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
