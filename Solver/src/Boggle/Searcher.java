@@ -18,15 +18,15 @@ public class Searcher {
     Board board;
     Lexicon lex;
     
-    HashSet<String> hash;
-    LinkedList<String> words;
+    HashSet<String> words;
+    //LinkedList<String> words;
     
     public Searcher(Board b, Lexicon l) {
         
         board = b;
         lex = l;
-        words = new LinkedList<String>();
-        //hash = new HashSet<String>();
+        //words = new LinkedList<String>();
+        words = new HashSet<String>();
         
     }
     
@@ -70,15 +70,15 @@ public class Searcher {
         
         if (lex.isWord(wp.getWord())) {
             
-            int truth = Collections.binarySearch(words, wp.getWord());
-
-            if (truth < 0)  {
-                
-                words.add(wp.getWord());
-                
-            }
+//            int truth = Collections.binarySearch(words, wp.getWord());
+//
+//            if (truth < 0)  {
+//                
+//                words.add(wp.getWord());
+//                
+//            }
             
-            //hash.add(wp.getWord());
+            words.add(wp.getWord());
             
             
             //if (words.contains(wp.getWord()) == false) {
@@ -109,7 +109,7 @@ public class Searcher {
     
     public Iterable<String> getWords() {
         
-        Collections.sort(words);
+       // Collections.sort(words);
         return words;
         
     }

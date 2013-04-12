@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.8" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace pref="46" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="filler2" min="-2" pref="172" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="Board" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="filler1" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="Solve" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Component id="Board" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="filler1" min="-2" pref="96" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="52" max="32767" attributes="0"/>
+              <Component id="Solve" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="filler2" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="Board">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Num00" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num01" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num02" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num03" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num04" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num05" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num06" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num07" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num08" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Num10" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num11" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num12" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num13" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num14" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num15" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num16" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num17" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num18" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Num20" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num21" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num22" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num23" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num24" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num25" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num26" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num27" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num28" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Num30" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num31" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num32" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num33" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num34" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num35" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num36" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num37" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num38" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Num40" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num41" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num42" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num43" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num44" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num45" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num46" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num47" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num48" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Num50" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num51" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num52" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num53" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num54" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num55" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num56" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num57" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num58" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Num60" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num61" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num62" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num63" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num64" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num65" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num66" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num67" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num68" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Num70" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num71" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num72" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num73" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num74" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num75" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num76" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num77" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num78" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Num80" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num81" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num82" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num83" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num84" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num85" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="Num86" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num87" min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Num88" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Num00" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num01" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num02" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num03" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num04" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num05" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num06" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num07" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num08" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Num10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num11" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num12" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num14" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num15" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num16" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num17" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num18" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Num20" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num21" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num22" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num23" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num24" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num25" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num26" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num27" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num28" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Num30" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num31" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num32" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num33" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num34" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num35" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num36" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num37" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num38" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Num40" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num41" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num42" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num43" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num44" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num45" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num46" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num47" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num48" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Num50" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num51" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num52" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num53" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num54" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num55" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num56" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num57" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num58" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Num60" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num61" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num62" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num63" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num64" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num65" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num66" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num67" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num68" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Num70" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num71" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num72" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num73" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num74" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num75" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num76" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num77" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num78" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Num80" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num81" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num82" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num83" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num84" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num85" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num86" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num87" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Num88" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="Num00">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num01">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num02">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num03">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num04">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num05">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num06">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num07">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num08">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num10">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num11">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num12">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num13">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num14">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num15">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num16">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num17">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num18">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num20">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num21">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num22">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num23">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num24">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num25">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num26">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num27">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num28">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num30">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num31">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num32">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num33">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num34">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num35">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num36">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num37">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num38">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num40">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num41">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num42">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num43">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num44">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num45">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num46">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num47">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num48">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num50">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num51">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num52">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num53">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num54">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num55">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num56">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num57">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num58">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num60">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num61">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num62">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num63">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num64">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num65">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num66">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num67">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num68">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num70">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num71">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num72">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num73">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num74">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num75">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num76">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num77">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num78">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num80">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num81">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num82">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num83">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Num83ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num84">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num85">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num86">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num87">
+        </Component>
+        <Component class="javax.swing.JTextField" name="Num88">
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.Box$Filler" name="filler1">
+      <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[2, 32767]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[2, 0]"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[2, 0]"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.HorizontalStrut"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.Box$Filler" name="filler2">
+      <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[32767, 3]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 3]"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 3]"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="classDetails" type="java.lang.String" value="Box.Filler.VerticalStrut"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="Solve">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Solve"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
