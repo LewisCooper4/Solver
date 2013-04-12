@@ -26,6 +26,13 @@ public class SolverFrame extends javax.swing.JFrame {
     public SolverFrame() {
         initComponents();
     }
+    
+    
+    
+    private void sudokuPanel() {
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
