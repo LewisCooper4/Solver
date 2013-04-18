@@ -4,6 +4,7 @@
  */
 package Sudoku;
 
+import Controller.DataMap;
 import java.util.ArrayList;
 import javax.swing.JTextField;
 
@@ -11,15 +12,16 @@ import javax.swing.JTextField;
  *
  * @author Lewis
  */
-public class NumberMap {
+public class SudokuMap implements DataMap<Integer> {
     
     private ArrayList<JTextField> textFields;
     
-    public NumberMap(ArrayList<JTextField> textFields) {
+    public SudokuMap(ArrayList<JTextField> textFields) {
         this.textFields = textFields;
     }
     
-    public int getNum(int i, int j) { 
+    @Override
+    public Integer getData(int i, int j) { 
         int num;
         int index = i * 9 + j;
         String c = textFields.get(index).getText();
@@ -33,11 +35,11 @@ public class NumberMap {
         return num;
     }
     
-    public void setNum(int i, int j, int num) {
+    @Override
+    public void setData(int i, int j, Integer num) {
         int index = i * 9 + j;
         textFields.get(index).setText("" + num);        
-    }
-    
-    
-    
+    }      
+
 }
+

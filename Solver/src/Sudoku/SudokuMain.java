@@ -13,7 +13,7 @@ public class SudokuMain {
     public static void main(String args[]) {
         
         
-        int[][] board = new int[9][9];
+        Integer[][] board = new Integer[9][9];
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 board[i][j] = 0;
@@ -63,10 +63,10 @@ public class SudokuMain {
         
         System.out.println();
         
-        Solver s = new Solver();
+        SudokuSearcher s = new SudokuSearcher();
         s.solve(0, 0, board);
         
-        int[][] correctBoard = s.getBoard();
+        Integer[][] correctBoard = s.getBoard();
         
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {

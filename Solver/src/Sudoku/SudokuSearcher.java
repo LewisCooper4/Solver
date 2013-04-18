@@ -8,16 +8,16 @@ package Sudoku;
  *
  * @author Lewis
  */
-public class Solver {
+public class SudokuSearcher {
     
-    private int[][] correctBoard;   
+    private Integer[][] correctBoard;   
     
-    public Solver() {
-        correctBoard = new int[9][9];
+    public SudokuSearcher() {
+        correctBoard = new Integer[9][9];
     }    
     
     
-    public boolean solve(int i, int j, int[][] board) {
+    public boolean solve(int i, int j, Integer[][] board) {
         
         if (i == 9) {
             i = 0;
@@ -49,7 +49,7 @@ public class Solver {
     }
     
     
-    private boolean isLegal(int row, int col, int value, int[][] board) {
+    private boolean isLegal(int row, int col, int value, Integer[][] board) {
         
         //ROW CHECK
         for (int j = 0; j < 9; j++) {
@@ -79,7 +79,7 @@ public class Solver {
         return true;
     }
     
-    public int[][] getBoard() {
+    public Integer[][] getBoard() {
         return correctBoard;
     }
     

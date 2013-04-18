@@ -4,37 +4,42 @@
  */
 package Sudoku;
 
+import Controller.GUIController;
+
 /**
  *
  * @author Lewis
  */
-public class GUIController {
+public class SudokuController implements GUIController<Integer> {
     
-    private NumberMap numMap;
-    private int[][] sudokuBoard;
+    private SudokuMap numMap;
+    private Integer[][] sudokuBoard;
     
-    public GUIController(NumberMap numMap) {
+    public SudokuController(SudokuMap numMap) {
         this.numMap = numMap;
-        sudokuBoard = new int[9][9];
+        sudokuBoard = new Integer[9][9];
     }
     
+    @Override
     public void createBoard() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                sudokuBoard[i][j] = numMap.getNum(i, j);
+                sudokuBoard[i][j] = numMap.getData(i, j);
             }
         } 
     }
     
-    public void setBoard(int[][] board) {       
+    @Override
+    public void setBoard(Integer[][] board) {       
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                numMap.setNum(i, j, board[i][j]);
+                numMap.setData(i, j, board[i][j]);
             }
         }        
     }
     
-    public int[][] getBoard() {
+    @Override
+    public Integer[][] getBoard() {
         return sudokuBoard;
     }
     
