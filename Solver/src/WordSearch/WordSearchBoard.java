@@ -5,6 +5,9 @@
 package WordSearch;
 
 import Boggle.Location;
+import java.awt.Color;
+import java.util.List;
+import javax.swing.JTextField;
 
 /**
  *
@@ -30,5 +33,6 @@ public class WordSearchBoard {
         
         return letters[loc.getRow()][loc.getCol()];        
     }
+ 
     
 }

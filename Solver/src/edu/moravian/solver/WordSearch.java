@@ -408,11 +408,8 @@ public class WordSearch extends javax.swing.JFrame {
         WordSearcher s = new WordSearcher(6, lex, board);
         s.search();
         
-        Words.setText("Number of words = " + s.getSize() + "\n");      
+        Words.setText("Found the word");      
         
-        for (String word : s.getWords()) {
-            Words.append(word + "\n");
-        }
     }//GEN-LAST:event_SolveActionPerformed
 
     private void Let04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Let04ActionPerformed
