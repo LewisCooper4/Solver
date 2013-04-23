@@ -5,6 +5,7 @@
 package Sudoku;
 
 import Controller.DataMap;
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JTextField;
 
@@ -38,6 +39,9 @@ public class SudokuMap implements DataMap<Integer> {
     @Override
     public void setData(int i, int j, Integer num) {
         int index = i * 9 + j;
+        if ("0".equals(textFields.get(index).getText())) {
+            textFields.get(index).setBackground(Color.YELLOW);
+        }
         textFields.get(index).setText("" + num);        
     }      
 

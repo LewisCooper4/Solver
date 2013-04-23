@@ -4,6 +4,7 @@
  */
 package Sudoku;
 
+import Controller.DataMap;
 import Controller.GUIController;
 
 /**
@@ -15,8 +16,8 @@ public class SudokuController implements GUIController<Integer> {
     private SudokuMap numMap;
     private Integer[][] sudokuBoard;
     
-    public SudokuController(SudokuMap numMap) {
-        this.numMap = numMap;
+    public SudokuController(DataMap numMap) {
+        this.numMap = (SudokuMap) numMap;
         sudokuBoard = new Integer[9][9];
     }
     

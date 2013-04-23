@@ -4,6 +4,7 @@
  */
 package Boggle;
 
+import Controller.DataMap;
 import Controller.GUIController;
 import edu.moravian.solver.Boggle;
 import java.io.FileNotFoundException;
@@ -24,8 +25,8 @@ public class BoggleController implements GUIController<Character> {
     private char[][] board;
     
     
-    public BoggleController(BoggleMap map, JTextArea textArea) {
-        this.map = map;
+    public BoggleController(DataMap map, JTextArea textArea) {
+        this.map = (BoggleMap) map;
         this.textArea = textArea;
         board = new char[4][4];
     }

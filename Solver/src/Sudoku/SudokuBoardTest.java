@@ -195,20 +195,18 @@ public class SudokuBoardTest extends javax.swing.JFrame {
         String game = (String) Games.getSelectedItem();
         
         if ("Boggle".equals(game)) {
+            boggle.setVisible(true);
             Pane.setLayer(boggle, 0, 0);
+            sudoku.setVisible(false);
         }
-        if ("Sudoku".equals(game)) {            
+        if ("Sudoku".equals(game)) {   
+            sudoku.setVisible(true);
             Pane.setLayer(sudoku, 0, 0);
+            boggle.setVisible(false);
         }
     }//GEN-LAST:event_GamesActionPerformed
 
     private void SolveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SolveActionPerformed
-//            sudokuController.createBoard();
-//            Solver solver = new Solver();
-//            solver.solve(0, 0, sudokuController.getBoard());
-//            sudokuController.setBoard(solver.getBoard());
-//            boggleController.createBoard();
-//            boggleController.setBoard(null);
             
             String game = (String) (Games.getSelectedItem());
             DataMap dataMap = dataMaps.get(game);
