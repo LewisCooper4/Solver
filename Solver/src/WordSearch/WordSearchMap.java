@@ -33,7 +33,13 @@ public class WordSearchMap implements DataMap<Character> {
     @Override
     public void setData(int i, int j, Character data) {
         int index = i * size + j;
-        textFields.get(index).setBackground(Color.YELLOW);
+        if (data == 't') {
+            textFields.get(index).setBackground(Color.YELLOW);
+        }
+        else {
+            textFields.get(index).setBackground(Color.WHITE);
+        }
+        
     }
     
 }

@@ -18,6 +18,9 @@ public class WordFinderFrame extends javax.swing.JFrame {
 
     private JPanel wordSearch;
     private WSBoard wsBoard;
+    private WordSearchMap map;
+    private WordSearchController controller;
+    private WordSearchSolver solver;
     
     /**
      * Creates new form WordFinderFrame
@@ -51,7 +54,9 @@ public class WordFinderFrame extends javax.swing.JFrame {
             wordSearch.add(list.get(i));
         }
         
-        wsBoard = new WSBoard(list);
+        map = new WordSearchMap(list, 6);
+        controller = new WordSearchController(map, 6, Word.getText());
+        //wsBoard = new WSBoard(list);
         Pane.add(wordSearch);
     }
 
@@ -121,9 +126,12 @@ public class WordFinderFrame extends javax.swing.JFrame {
 
     private void SolveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SolveActionPerformed
 
-        OneWordLexicon lex = new OneWordLexicon(Word.getText());
-        WordFinder finder = new WordFinder(6, lex, wsBoard);
-        finder.search();   
+//        OneWordLexicon lex = new OneWordLexicon(Word.getText());
+//        WordFinder finder = new WordFinder(6, lex, wsBoard);
+//        finder.search();   
+        controller = new WordSearchController(map, 6, Word.getText());
+        solver = new WordSearchSolver(map, controller);
+        solver.solve();
         
     }//GEN-LAST:event_SolveActionPerformed
 
