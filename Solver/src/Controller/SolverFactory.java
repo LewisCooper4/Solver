@@ -6,6 +6,7 @@ package Controller;
 
 import Boggle.BoggleSolver;
 import Sudoku.SudokuSolver;
+import WordSearch.WordSearchSolver;
 
 /**
  *
@@ -20,6 +21,9 @@ public class SolverFactory {
         }
         else if ("Boggle".equals(solver)) {
             return new BoggleSolver(dataMap, controller);
+        }
+        else if ("Word Search".equals(solver)) {
+            return new WordSearchSolver(dataMap, controller);
         }
         
         return null;

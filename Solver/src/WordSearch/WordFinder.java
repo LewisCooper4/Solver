@@ -17,25 +17,27 @@ public class WordFinder {
     
     private int dimensions;
     private OneWordLexicon lex;    
-    private WSBoard board;
+    private char[][] board;
 
-    public WordFinder(int dimensions, OneWordLexicon lex, WSBoard board) {
+    public WordFinder(int dimensions, OneWordLexicon lex, char[][] board) {
         this.dimensions = dimensions;
         this.lex = lex;
         this.board = board;
     }
     
-    public void search() {
+    public List<Location> search() {
         
         for (int i = 0; i < dimensions; i++) {
             for (int j = 0; j < dimensions; j++) {
                 List<Location> path = getWords(new Location(i, j));
                 if (path != null) {
-                    board.color(path);
-                    return;
+                    
+                    //board.color(path);
+                    return path;
                 }
             }            
         }
+        return null;
         
     }
     
@@ -46,7 +48,7 @@ public class WordFinder {
         path.add(startLocation);
         
         WordPath wp = new WordPath();
-        char startLetter = board.getLetter(loc);
+        char startLetter = board[loc.getRow()][loc.getCol()];
         wp.push(startLetter);
         
         int row = loc.getRow();
@@ -58,7 +60,7 @@ public class WordFinder {
             i++;
             loc = new Location(row, col - i);
             path.add(loc);
-            wp.push(board.getLetter(loc));
+            wp.push(board[loc.getRow()][loc.getCol()]);
             if (lex.isWord(wp.getWord())) {
                 return path;
             }
@@ -74,7 +76,7 @@ public class WordFinder {
             i++;
             loc = new Location(row + i, col);
             path.add(loc);
-            wp.push(board.getLetter(loc));
+            wp.push(board[loc.getRow()][loc.getCol()]);
             if (lex.isWord(wp.getWord())) {
                 return path;
             }
@@ -90,7 +92,7 @@ public class WordFinder {
             i++;
             loc = new Location(row, col + i);
             path.add(loc);
-            wp.push(board.getLetter(loc));
+            wp.push(board[loc.getRow()][loc.getCol()]);
             if (lex.isWord(wp.getWord())) {
                 return path;
             }
@@ -106,7 +108,7 @@ public class WordFinder {
             i++;
             loc = new Location(row - i, col);
             path.add(loc);
-            wp.push(board.getLetter(loc));
+            wp.push(board[loc.getRow()][loc.getCol()]);
             if (lex.isWord(wp.getWord())) {
                 return path;
             }
@@ -122,7 +124,7 @@ public class WordFinder {
             i++;
             loc = new Location(row + i, col - i);
             path.add(loc);
-            wp.push(board.getLetter(loc));
+            wp.push(board[loc.getRow()][loc.getCol()]);
             if (lex.isWord(wp.getWord())) {
                 return path;
             }
@@ -138,7 +140,7 @@ public class WordFinder {
             i++;
             loc = new Location(row + i, col + i);
             path.add(loc);
-            wp.push(board.getLetter(loc));
+            wp.push(board[loc.getRow()][loc.getCol()]);
             if (lex.isWord(wp.getWord())) {
                 return path;
             }
@@ -154,7 +156,7 @@ public class WordFinder {
             i++;
             loc = new Location(row - i, col + i);
             path.add(loc);
-            wp.push(board.getLetter(loc));
+            wp.push(board[loc.getRow()][loc.getCol()]);
             if (lex.isWord(wp.getWord())) {
                 return path;
             }
@@ -170,7 +172,7 @@ public class WordFinder {
             i++;
             loc = new Location(row - i, col - i);
             path.add(loc);
-            wp.push(board.getLetter(loc));
+            wp.push(board[loc.getRow()][loc.getCol()]);
             if (lex.isWord(wp.getWord())) {
                 return path;
             }
