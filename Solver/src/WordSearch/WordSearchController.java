@@ -7,7 +7,7 @@ package WordSearch;
 import Controller.DataMap;
 import Controller.GUIController;
 
-/**hi
+/**lewis
  *
  * @author Lewis
  */
