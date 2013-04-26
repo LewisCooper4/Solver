@@ -55,7 +55,7 @@ public class WordFinderFrame extends javax.swing.JFrame {
         }
         
         map = new WordSearchMap(list, 6);
-        controller = new WordSearchController(map, 6, Word.getText());
+        controller = new WordSearchController(map, 6);
         //wsBoard = new WSBoard(list);
         Pane.add(wordSearch);
     }
@@ -129,7 +129,7 @@ public class WordFinderFrame extends javax.swing.JFrame {
 //        OneWordLexicon lex = new OneWordLexicon(Word.getText());
 //        WordFinder finder = new WordFinder(6, lex, wsBoard);
 //        finder.search();   
-        controller = new WordSearchController(map, 6, Word.getText());
+        controller = new WordSearchController(map, 6);
         solver = new WordSearchSolver(map, controller);
         solver.solve();
         

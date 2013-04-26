@@ -8,6 +8,7 @@ import Boggle.Location;
 import Controller.DataMap;
 import Controller.GUIController;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**lewis
  *
@@ -18,13 +19,11 @@ public class WordSearchController implements GUIController<Character> {
     private WordSearchMap map;
     private char[][] board;
     private int size;
-    private String word;
     
-    public WordSearchController(DataMap map, int size, String word) {
+    public WordSearchController(DataMap map, int size) {
         this.map = (WordSearchMap) map;
         board = new char[size][size];
         this.size = size;
-        this.word = word;
     }
     
     @Override
@@ -39,8 +38,11 @@ public class WordSearchController implements GUIController<Character> {
     @Override
     public void setBoard(Character[][] boardy) {
         
+        String word = (String)JOptionPane.showInputDialog(null, "Please enter the word you want to find",
+                    "Word Search", JOptionPane.PLAIN_MESSAGE, null, null, "");
+        
         OneWordLexicon lex = new OneWordLexicon(word);
-        WordFinder finder = new WordFinder(6, lex, board);
+        WordFinder finder = new WordFinder(size, lex, board);
         List<Location> path = finder.search();
         
         for (int i = 0; i < size; i++) {
@@ -49,9 +51,14 @@ public class WordSearchController implements GUIController<Character> {
             }
         }
         
-        for (Location loc : path) {
-            map.setData(loc.getRow(), loc.getCol(), 't');
+        if (path != null) {
+            for (Location loc : path) {
+                map.setData(loc.getRow(), loc.getCol(), 't');
+            }
         }
+        
+        
+        
         
     }
 

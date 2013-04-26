@@ -7,6 +7,7 @@ package Boggle;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.HashSet;
+import java.util.List;
 
 
 /**
@@ -109,8 +110,12 @@ public class Searcher {
     
     public Iterable<String> getWords() {
         
-       // Collections.sort(words);
-        return words;
+        List<String> list = new LinkedList<String>();
+        for (String s : words) {
+            list.add(s);
+        }
+        Collections.sort(list);
+        return list;
         
     }
     

@@ -4,6 +4,7 @@
  */
 package Sudoku;
 
+import TestClasses.BoardTest;
 import Boggle.BoggleController;
 import Boggle.BoggleMap;
 import Controller.DataMap;

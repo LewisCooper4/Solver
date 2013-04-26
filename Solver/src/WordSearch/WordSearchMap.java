@@ -36,8 +36,11 @@ public class WordSearchMap implements DataMap<Character> {
         if (data == 't') {
             textFields.get(index).setBackground(Color.YELLOW);
         }
-        else {
+        else if (data == 'f') {
             textFields.get(index).setBackground(Color.WHITE);
+        }
+        else {
+            
         }
         
     }

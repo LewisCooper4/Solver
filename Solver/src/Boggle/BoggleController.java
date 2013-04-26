@@ -6,7 +6,7 @@ package Boggle;
 
 import Controller.DataMap;
 import Controller.GUIController;
-import edu.moravian.solver.Boggle;
+import TestClasses.Boggle;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;

@@ -30,7 +30,7 @@ public class Lexicon  {
         
         while ((word = reader.readLine()) != null) {
             
-            if (word.length() > 2){
+            if (word.length() > 0){
                 
                 words.add(word);
      

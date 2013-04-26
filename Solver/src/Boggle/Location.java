@@ -16,11 +16,11 @@ public class Location {
     public Location(int r, int c) {
         
        // System.out.println("row = " + r + " col = " + c);
-        if(r > 5 || r < 0 || c > 5 || c < 0) {
-            
-            throw new IllegalArgumentException("That location does not exist");
-            
-        } 
+//        if(r > 5 || r < 0 || c > 5 || c < 0) {
+//            
+//            throw new IllegalArgumentException("That location does not exist");
+//            
+//        } 
             
         row = r;
         col = c;        

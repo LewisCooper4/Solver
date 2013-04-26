@@ -16,10 +16,12 @@ import WordSearch.WordSearchController;
 import WordSearch.WordSearchMap;
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -38,9 +40,6 @@ public class FinalSolver extends javax.swing.JFrame {
      */
     public FinalSolver() {
         initComponents();
-        
-        //createBoggle();
-        
     }
     
     private void createBoggle() {
@@ -48,29 +47,20 @@ public class FinalSolver extends javax.swing.JFrame {
           
         
         board = new JPanel(new GridLayout(4, 4));
-        board.setSize(310, 310);
+        board.setSize(BoardPanel.getWidth(), BoardPanel.getHeight());
         board.setBackground(Color.BLUE);
         
         for (int i = 0; i < 16; i++) {
             JTextField field = new JTextField("x");
+            Font font1 = new Font("SansSerif", Font.BOLD, 32);
+            field.setFont(font1);
+            field.setHorizontalAlignment(JTextField.CENTER);
             list.add(field);
             board.add(field);
             
         }
         
-//        board = new JPanel(new FlowLayout());
-//        board.setSize(175, 150);
-//        board.setBackground(Color.BLUE);
-        
-//        for (int i = 0; i < 16; i++) {
-//            JTextField field =  new JTextField("x", 2);
-//            list.add(field);
-//            
-//        }
-//        
-//        for (int i = 0; i < list.size(); i++) {
-//            board.add(list.get(i));
-//        }
+        Instructions.setText("Boggle Instructions");
         
         dataMap = new BoggleMap(list);
         controller = new BoggleController(dataMap, textArea);
@@ -93,8 +83,8 @@ public class FinalSolver extends javax.swing.JFrame {
     
         
         board = new JPanel(new GridLayout(9, 9));
-        board.setSize(320, 320);
-        board.setBackground(Color.RED);
+        board.setSize(BoardPanel.getWidth(), BoardPanel.getHeight());
+        board.setBackground(new Color(176, 255, 197));
         
         for (int i = 0; i < 81; i++) {
 
@@ -103,30 +93,15 @@ public class FinalSolver extends javax.swing.JFrame {
 
             JTextField field = new JFormattedTextField(format);
             field.setText("" + numbers[i]);
+            Font font1 = new Font("SansSerif", Font.BOLD, 16);
+            field.setFont(font1);
+            field.setHorizontalAlignment(JTextField.CENTER);
             list.add(field);
             board.add(field);
             
         }
         
-//       board = new JPanel(new FlowLayout());
-//       board.setSize(265, 300);
-//       board.setBackground(Color.RED); 
-        
-//       for (int i = 0; i < 81; i++) {
-//            JTextField field =  new JTextField("" + numbers[i], 1);            
-//            list.add(field);            
-//        }
-//        
-//        for (int i = 0; i < list.size(); i++) {
-//            board.add(list.get(i));
-//        }//        for (int i = 0; i < 81; i++) {
-//            JTextField field =  new JTextField("" + numbers[i], 1);            
-//            list.add(field);            
-//        }
-//        
-//        for (int i = 0; i < list.size(); i++) {
-//            board.add(list.get(i));
-//        }
+        Instructions.setText("Sudoku Instructions");
         
         dataMap = new SudokuMap(list);
         controller = new SudokuController(dataMap);
@@ -134,33 +109,37 @@ public class FinalSolver extends javax.swing.JFrame {
         BoardPanel.setLayer(board, 0, 0);
         
     }
-    private void createWordSearch(int size, String word) {
+    private void createWordSearch(int size) {
     
         ArrayList<JTextField> list = new ArrayList<>();
-        board = new JPanel(new FlowLayout());
-        board.setSize(270, 300);
+        //board = new JPanel(new FlowLayout());
+        board = new JPanel(new GridLayout(size, size));
+        board.setSize(BoardPanel.getWidth(), BoardPanel.getHeight());
         board.setBackground(Color.BLUE);  
         
-        char[] letters = {'h','x','x','x','x','x',
-                          'x','e','x','x','x','x',
-                          'x','x','l','x','x','x',
-                          'x','x','x','l','x','x',
-                          'x','x','x','x','o','x',
-                          'x','x','x','x','x','x'};
+//        char[] letters = {'h','x','x','x','x','x',
+//                          'x','e','x','x','x','x',
+//                          'x','x','l','x','x','x',
+//                          'x','x','x','l','x','x',
+//                          'x','x','x','x','o','x',
+//                          'x','x','x','x','x','x'};
         
-        for (int i = 0; i < 36; i++) {
-            JTextField field =  new JTextField("" + letters[i], 2);
-            list.add(field);
-            
+        for (int i = 0; i < size*size; i++) {
+            JTextField field =  new JTextField("x", 2);
+            Font font1 = new Font("SansSerif", Font.PLAIN, 26 - size);
+            field.setFont(font1);
+            field.setHorizontalAlignment(JTextField.CENTER);
+            list.add(field);            
         }
         
         for (int i = 0; i < list.size(); i++) {
             board.add(list.get(i));
         }
         
-        dataMap = new WordSearchMap(list, 6);
-        controller = new WordSearchController(dataMap, size, word);
-        //wsBoard = new WSBoard(list);
+        Instructions.setText("Word Search Instructions");
+        
+        dataMap = new WordSearchMap(list, size);
+        controller = new WordSearchController(dataMap, size);
         BoardPanel.add(board);
         BoardPanel.setLayer(board, 0, 0);
     }
@@ -180,6 +159,8 @@ public class FinalSolver extends javax.swing.JFrame {
         Games = new javax.swing.JComboBox();
         BoardPanel = new javax.swing.JLayeredPane();
         blank = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Instructions = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -209,46 +190,59 @@ public class FinalSolver extends javax.swing.JFrame {
         blank.setLayout(blankLayout);
         blankLayout.setHorizontalGroup(
             blankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         blankLayout.setVerticalGroup(
             blankLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
+            .addGap(0, 410, Short.MAX_VALUE)
         );
 
-        blank.setBounds(0, 0, 320, 320);
+        blank.setBounds(0, 0, 400, 410);
         BoardPanel.add(blank, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        Instructions.setEditable(false);
+        Instructions.setColumns(20);
+        Instructions.setRows(5);
+        jScrollPane1.setViewportView(Instructions);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(60, 60, 60)
-                .addComponent(Games, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(Games, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TextArea, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+                    .addComponent(TextArea, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
                     .addComponent(BoardPanel))
-                .addGap(87, 87, 87))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Solve)
-                .addGap(242, 242, 242))
+                .addGap(166, 166, 166))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(Games, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BoardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Solve))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Games, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(233, 233, 233)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BoardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(Solve)
+                .addGap(0, 27, Short.MAX_VALUE))
         );
 
         pack();
@@ -266,19 +260,26 @@ public class FinalSolver extends javax.swing.JFrame {
             createSudoku();
         }
         else if ("Word Search".equals(game)) {
-            //DIALOG BOX
-            int size = 6;
-            createWordSearch(size, "hello");
+            
+            Object[] possibilities = {"6X6", "7X7", "8X8", "9X9", "10X10", "11X11", 
+                                      "12X12", "13X13", "14X14","15X15", "16X16"};
+            String s = (String)JOptionPane.showInputDialog(this, "Please select the size of the board",
+                    "Word Search", JOptionPane.PLAIN_MESSAGE,null, possibilities, "6X6");
+            
+            int end = s.indexOf("X");
+            int size = Integer.parseInt(s.substring(0, end));
+            createWordSearch(size);
         }
 
     }//GEN-LAST:event_GamesActionPerformed
 
     private void SolveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SolveActionPerformed
         
+        textArea.setText("");
         String game = (String) (Games.getSelectedItem());
         Solver solver = SolverFactory.getSolver(game, dataMap, controller);
         solver.solve();
-        textArea.append("Solved!!!!!!!!");
+        //textArea.append("Solved!!!!!!!!");
         
     }//GEN-LAST:event_SolveActionPerformed
 
@@ -319,9 +320,11 @@ public class FinalSolver extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane BoardPanel;
     private javax.swing.JComboBox Games;
+    private javax.swing.JTextArea Instructions;
     private javax.swing.JButton Solve;
     private javax.swing.JScrollPane TextArea;
     private javax.swing.JPanel blank;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea textArea;
     // End of variables declaration//GEN-END:variables
 }
