@@ -10,6 +10,8 @@ import Controller.DataMap;
 import Controller.GUIController;
 import Controller.Solver;
 import Controller.SolverFactory;
+import Scrabble.ScrabbleController;
+import Scrabble.ScrabbleMap;
 import Sudoku.SudokuController;
 import Sudoku.SudokuMap;
 import WordSearch.WordSearchController;
@@ -43,8 +45,8 @@ public class FinalSolver extends javax.swing.JFrame {
     }
     
     private void createBoggle() {
-        ArrayList<JTextField> list = new ArrayList<>();
-          
+        
+        ArrayList<JTextField> list = new ArrayList<>();          
         
         board = new JPanel(new GridLayout(4, 4));
         board.setSize(BoardPanel.getWidth(), BoardPanel.getHeight());
@@ -64,6 +66,34 @@ public class FinalSolver extends javax.swing.JFrame {
         
         dataMap = new BoggleMap(list);
         controller = new BoggleController(dataMap, textArea);
+        BoardPanel.add(board);
+        BoardPanel.setLayer(board, 0, 0);
+    }
+    private void createScrabble(int size) {
+
+        ArrayList<JTextField> list = new ArrayList<>();
+
+        board = new JPanel(new FlowLayout());
+        board.setSize(BoardPanel.getWidth(), BoardPanel.getHeight());
+        board.setBackground(Color.BLUE);
+
+        char[] letters = {'e', 's', 't', 's', 'a', 'f', 'g', 'h', 'o', 'e', 't', 'p', 'a'};
+
+        for (int i = 0; i < size; i++) {
+            JTextField field = new JTextField("" + letters[i], 3);
+            Font font1 = new Font("SansSerif", Font.BOLD, 24);
+            field.setFont(font1);
+            field.setHorizontalAlignment(JTextField.CENTER);
+            list.add(field);
+            board.add(field);
+
+        }
+        
+        Instructions.setText("Scrabble Instructions");
+
+        dataMap = new ScrabbleMap(list);
+        controller = new ScrabbleController(dataMap, size, textArea);
+
         BoardPanel.add(board);
         BoardPanel.setLayer(board, 0, 0);
     }
@@ -175,7 +205,7 @@ public class FinalSolver extends javax.swing.JFrame {
             }
         });
 
-        Games.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Boggle", "Sudoku", "Word Search" }));
+        Games.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Boggle", "Scrabble", "Sudoku", "Word Search" }));
         Games.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GamesActionPerformed(evt);
@@ -256,16 +286,24 @@ public class FinalSolver extends javax.swing.JFrame {
         if ("Boggle".equals(game)) {
             createBoggle();
         }
+        
+        else if ("Scrabble".equals(game)) {
+            String word = (String)JOptionPane.showInputDialog(null, "Please enter the amount of letters you have",
+                    "Scrabble", JOptionPane.PLAIN_MESSAGE, null, null, "");
+            int size = Integer.parseInt(word);
+            createScrabble(size);
+        }
+        
         else if ("Sudoku".equals(game)) {
             createSudoku();
         }
+        
         else if ("Word Search".equals(game)) {
             
             Object[] possibilities = {"6X6", "7X7", "8X8", "9X9", "10X10", "11X11", 
                                       "12X12", "13X13", "14X14","15X15", "16X16"};
             String s = (String)JOptionPane.showInputDialog(this, "Please select the size of the board",
-                    "Word Search", JOptionPane.PLAIN_MESSAGE,null, possibilities, "6X6");
-            
+                    "Word Search", JOptionPane.PLAIN_MESSAGE,null, possibilities, "6X6");            
             int end = s.indexOf("X");
             int size = Integer.parseInt(s.substring(0, end));
             createWordSearch(size);
@@ -277,9 +315,8 @@ public class FinalSolver extends javax.swing.JFrame {
         
         textArea.setText("");
         String game = (String) (Games.getSelectedItem());
-        Solver solver = SolverFactory.getSolver(game, dataMap, controller);
+        Solver solver = SolverFactory.getSolver(game, controller);
         solver.solve();
-        //textArea.append("Solved!!!!!!!!");
         
     }//GEN-LAST:event_SolveActionPerformed
 
@@ -299,19 +336,14 @@ public class FinalSolver extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FinalSolver.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FinalSolver.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FinalSolver.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FinalSolver.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new FinalSolver().setVisible(true);
             }

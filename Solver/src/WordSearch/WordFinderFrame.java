@@ -130,7 +130,7 @@ public class WordFinderFrame extends javax.swing.JFrame {
 //        WordFinder finder = new WordFinder(6, lex, wsBoard);
 //        finder.search();   
         controller = new WordSearchController(map, 6);
-        solver = new WordSearchSolver(map, controller);
+        solver = new WordSearchSolver(controller);
         solver.solve();
         
     }//GEN-LAST:event_SolveActionPerformed

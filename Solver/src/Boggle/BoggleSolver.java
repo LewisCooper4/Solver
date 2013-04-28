@@ -14,11 +14,9 @@ import Controller.Solver;
  */
 public class BoggleSolver implements Solver {
 
-    private DataMap map;
     private GUIController controller;
 
-    public BoggleSolver(DataMap map, GUIController controller) {
-        this.map = map;
+    public BoggleSolver(GUIController controller) {
         this.controller = controller;
     }
     

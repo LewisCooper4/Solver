@@ -14,11 +14,9 @@ import Controller.Solver;
  */
 public class SudokuSolver implements Solver {
     
-    private DataMap map;
     private GUIController controller;
 
-    public SudokuSolver(DataMap map, GUIController controller) {
-        this.map = map;
+    public SudokuSolver(GUIController controller) {
         this.controller = controller;
     }
     

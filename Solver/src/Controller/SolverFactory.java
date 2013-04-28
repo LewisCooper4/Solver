@@ -5,6 +5,7 @@
 package Controller;
 
 import Boggle.BoggleSolver;
+import Scrabble.ScrabbleSolver;
 import Sudoku.SudokuSolver;
 import WordSearch.WordSearchSolver;
 
@@ -14,18 +15,22 @@ import WordSearch.WordSearchSolver;
  */
 public class SolverFactory {
     
-    public static Solver getSolver(String solver, DataMap dataMap, GUIController controller) {
+    public static Solver getSolver(String solver, GUIController controller) {        
         
-        if ("Sudoku".equals(solver)) {
-            return new SudokuSolver(dataMap, controller);
+        if ("Boggle".equals(solver)) {
+            return new BoggleSolver(controller);
         }
-        else if ("Boggle".equals(solver)) {
-            return new BoggleSolver(dataMap, controller);
+        else if ("Scrabble".equals(solver)) {
+            return new ScrabbleSolver(controller);
+        }
+        else if ("Sudoku".equals(solver)) {
+            return new SudokuSolver(controller);
         }
         else if ("Word Search".equals(solver)) {
-            return new WordSearchSolver(dataMap, controller);
+            return new WordSearchSolver(controller);
         }
         
+        System.out.println("We do not have that solver!!!!");
         return null;
     }
     

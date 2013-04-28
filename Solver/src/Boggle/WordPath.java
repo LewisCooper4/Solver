@@ -1,7 +1,5 @@
 package Boggle;
 
-import java.lang.IllegalStateException;
-
 public class WordPath {
  
   private StringBuffer word;

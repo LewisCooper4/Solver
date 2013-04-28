@@ -4,45 +4,29 @@
  */
 package Scrabble;
 
-import Boggle.Lexicon;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
+import Controller.DataMap;
+import Controller.GUIController;
+import Controller.Solver;
 
 /**
  *
  * @author Lewis
  */
-public class ScrabbleSolver {
+public class ScrabbleSolver implements Solver {
     
-    private char[] letters;
-    private Set<String> words;
+    private GUIController controller;
     
-    private static Lexicon lex;
-    
-    static {
-        try {
-            lex = new Lexicon("words.txt");
-        } catch (FileNotFoundException ex) {
-        } catch (IOException ex) {
-        }
+    public ScrabbleSolver(GUIController controller) {
+        this.controller = controller;
     }
-    
-    public ScrabbleSolver(char[] letters) {
-        this.letters = letters;
-        words = new HashSet<String>();
+
+    @Override
+    public void solve() {   
+        controller.createBoard();
+        controller.setBoard(null);        
     }
-    
-    public void findWords() {
-        
-        for (char c : letters) {
-            
-        }
-    }
-    
-    private void findHelper() {
-        
-    }
+
+    @Override
+    public void hint() {}
     
 }

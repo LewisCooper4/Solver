@@ -14,22 +14,16 @@ import Controller.Solver;
  */
 public class WordSearchSolver implements Solver {
     
-    private DataMap map;
     private GUIController controller;
-    private String word;
     
-    public WordSearchSolver(DataMap map, GUIController controller) {
-        this.map = map;
+    public WordSearchSolver(GUIController controller) {
         this.controller = controller;
-        this.word = word;
     }
 
     @Override
-    public void solve() {
-        
+    public void solve() {        
         controller.createBoard();
-        controller.setBoard(null);
-        
+        controller.setBoard(null);        
     }
 
     @Override

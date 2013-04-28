@@ -56,7 +56,7 @@ public class SudokuBoardTest extends javax.swing.JFrame {
     }
     
     private void createSolverMap() {
-        solvers.put("Sudoku", new SudokuSolver(null, null));
+        solvers.put("Sudoku", new SudokuSolver(null));
     }
     
     private void createSudoku() {
@@ -212,7 +212,7 @@ public class SudokuBoardTest extends javax.swing.JFrame {
             String game = (String) (Games.getSelectedItem());
             DataMap dataMap = dataMaps.get(game);
             GUIController controller = controllers.get(game);
-            Solver solver = SolverFactory.getSolver(game, dataMap, controller);
+            Solver solver = SolverFactory.getSolver(game, controller);
             solver.solve();
             Words.append("Solved!!!!!!!!");
             
