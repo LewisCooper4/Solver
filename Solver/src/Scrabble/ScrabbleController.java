@@ -43,10 +43,12 @@ public class ScrabbleController implements GUIController<Character> {
     @Override
     public void setBoard(Character[][] board) {
         
-        Object[] possibilities = {"Official Scrabble" , "Words With Friends"};
-            String fileName = (String)JOptionPane.showInputDialog(null, "Please select the point system you want to use",
-                    "Scrabble", JOptionPane.PLAIN_MESSAGE,null, possibilities, "Official Scrabble");  
-        
+        String fileName = null;
+        do {
+            Object[] possibilities = {"Official Scrabble", "Words With Friends"};
+            fileName = (String) JOptionPane.showInputDialog(null, "Please select the point system you want to use",
+                    "Scrabble", JOptionPane.PLAIN_MESSAGE, null, possibilities, "Official Scrabble");
+        } while (fileName == null);
         
         
         ScrabbleWordFinder finder = new ScrabbleWordFinder(letters, fileName + ".txt");

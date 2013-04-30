@@ -16,13 +16,16 @@ import Sudoku.SudokuController;
 import Sudoku.SudokuMap;
 import WordSearch.WordSearchController;
 import WordSearch.WordSearchMap;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
 import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -42,6 +45,19 @@ public class FinalSolver extends javax.swing.JFrame {
      */
     public FinalSolver() {
         initComponents();
+        
+        ImageIcon image = new ImageIcon("burrito.png");
+        JLabel label = new JLabel();
+        label.setSize(266, 183);
+        label.setIcon(image);
+        Image.add(label);
+        
+        ImageIcon image2 = new ImageIcon("Moravian-College-Logo.png");
+        JLabel label2 = new JLabel();
+        label2.setSize(300, 100);
+        label2.setIcon(image2);
+        Image2.add(label2);
+        
     }
     
     private void createBoggle() {
@@ -62,7 +78,11 @@ public class FinalSolver extends javax.swing.JFrame {
             
         }
         
-        Instructions.setText("Boggle Instructions");
+        Instructions.setText("Boggle Instructions\n"
+                            +"1. Input the current board\n"
+                            +"2. Hit solve\n"
+                            +"3. All possible words will be shown\n"
+                            +"Note: 'q' = \"qu\"");
         
         dataMap = new BoggleMap(list);
         controller = new BoggleController(dataMap, textArea);
@@ -75,7 +95,7 @@ public class FinalSolver extends javax.swing.JFrame {
 
         board = new JPanel(new FlowLayout());
         board.setSize(BoardPanel.getWidth(), BoardPanel.getHeight());
-        board.setBackground(Color.BLUE);
+        board.setBackground(new Color(174, 20, 20));
 
         char[] letters = {'e', 's', 't', 's', 'a', 'f', 'g', 'h', 'o', 'e', 't', 'p', 'a'};
 
@@ -89,7 +109,13 @@ public class FinalSolver extends javax.swing.JFrame {
 
         }
         
-        Instructions.setText("Scrabble Instructions");
+        Instructions.setText("Scrabble Instructions:\n"
+                            +"1. Input the number of tiles you have\n"
+                            +"2. Input your letters into the tile positions\n"
+                            +"3. Hit solve and choose point system you desire\n"
+                            +"4. All possible words with your letters and their point values will be shown\n"
+                            +"5. Also it will give you words that result from adding one additional letter\n");
+        
 
         dataMap = new ScrabbleMap(list);
         controller = new ScrabbleController(dataMap, size, textArea);
@@ -131,7 +157,10 @@ public class FinalSolver extends javax.swing.JFrame {
             
         }
         
-        Instructions.setText("Sudoku Instructions");
+        Instructions.setText("Sudoku Instructions\n"
+                            +"1. Input the numbers given and 0's for all blank spaces\n"
+                            +"2, Hit solve\n"
+                            +"3. All 0's will be changed to the correct number and highlighted");
         
         dataMap = new SudokuMap(list);
         controller = new SudokuController(dataMap);
@@ -147,13 +176,6 @@ public class FinalSolver extends javax.swing.JFrame {
         board.setSize(BoardPanel.getWidth(), BoardPanel.getHeight());
         board.setBackground(Color.BLUE);  
         
-//        char[] letters = {'h','x','x','x','x','x',
-//                          'x','e','x','x','x','x',
-//                          'x','x','l','x','x','x',
-//                          'x','x','x','l','x','x',
-//                          'x','x','x','x','o','x',
-//                          'x','x','x','x','x','x'};
-        
         for (int i = 0; i < size*size; i++) {
             JTextField field =  new JTextField("x", 2);
             Font font1 = new Font("SansSerif", Font.PLAIN, 26 - size);
@@ -166,7 +188,11 @@ public class FinalSolver extends javax.swing.JFrame {
             board.add(list.get(i));
         }
         
-        Instructions.setText("Word Search Instructions");
+        Instructions.setText("Word Search Instructions\n"
+                            +"1. Choose the size of the board\n"
+                            +"2. Enter the letters into the fields\n"
+                            +"3. Hit solve and enter the word you want to find\n"
+                            +"4. The word inputed will be highlighted");
         
         dataMap = new WordSearchMap(list, size);
         controller = new WordSearchController(dataMap, size);
@@ -186,14 +212,19 @@ public class FinalSolver extends javax.swing.JFrame {
         TextArea = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();
         Solve = new javax.swing.JButton();
-        Games = new javax.swing.JComboBox();
         BoardPanel = new javax.swing.JLayeredPane();
         blank = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Instructions = new javax.swing.JTextArea();
+        Image = new javax.swing.JPanel();
+        Games = new javax.swing.JComboBox();
+        Image2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Solver");
+        setResizable(false);
 
+        textArea.setEditable(false);
         textArea.setColumns(20);
         textArea.setRows(5);
         TextArea.setViewportView(textArea);
@@ -202,13 +233,6 @@ public class FinalSolver extends javax.swing.JFrame {
         Solve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SolveActionPerformed(evt);
-            }
-        });
-
-        Games.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Boggle", "Scrabble", "Sudoku", "Word Search" }));
-        Games.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GamesActionPerformed(evt);
             }
         });
 
@@ -235,44 +259,86 @@ public class FinalSolver extends javax.swing.JFrame {
         Instructions.setRows(5);
         jScrollPane1.setViewportView(Instructions);
 
+        javax.swing.GroupLayout ImageLayout = new javax.swing.GroupLayout(Image);
+        Image.setLayout(ImageLayout);
+        ImageLayout.setHorizontalGroup(
+            ImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 266, Short.MAX_VALUE)
+        );
+        ImageLayout.setVerticalGroup(
+            ImageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 183, Short.MAX_VALUE)
+        );
+
+        Games.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Boggle", "Scrabble", "Sudoku", "Word Search" }));
+        Games.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GamesActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Image2Layout = new javax.swing.GroupLayout(Image2);
+        Image2.setLayout(Image2Layout);
+        Image2Layout.setHorizontalGroup(
+            Image2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+        Image2Layout.setVerticalGroup(
+            Image2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(Games, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(TextArea, javax.swing.GroupLayout.DEFAULT_SIZE, 395, Short.MAX_VALUE)
-                    .addComponent(BoardPanel))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Solve)
-                .addGap(166, 166, 166))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(Image, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(55, 55, 55)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(105, 105, 105)
+                                .addComponent(Games, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Image2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BoardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TextArea))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Solve)
+                        .addGap(166, 166, 166))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Games, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(233, 233, 233)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(BoardPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(TextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                        .addComponent(TextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Image2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Games, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addComponent(Image, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(Solve)
-                .addGap(0, 27, Short.MAX_VALUE))
+                .addGap(37, 37, 37))
         );
 
         pack();
@@ -288,9 +354,14 @@ public class FinalSolver extends javax.swing.JFrame {
         }
         
         else if ("Scrabble".equals(game)) {
-            String word = (String)JOptionPane.showInputDialog(null, "Please enter the amount of letters you have",
+            String word = null;
+            
+            do {
+            word = (String)JOptionPane.showInputDialog(null, "Please enter the amount of letters you have",
                     "Scrabble", JOptionPane.PLAIN_MESSAGE, null, null, "");
+            } while(word.equals(""));
             int size = Integer.parseInt(word);
+            
             createScrabble(size);
         }
         
@@ -315,8 +386,13 @@ public class FinalSolver extends javax.swing.JFrame {
         
         textArea.setText("");
         String game = (String) (Games.getSelectedItem());
-        Solver solver = SolverFactory.getSolver(game, controller);
-        solver.solve();
+        if (controller != null) {
+            Solver solver = SolverFactory.getSolver(game, controller);
+            solver.solve();            
+        }
+        else {
+            textArea.setText("PICK A SOLVER STUPID");
+        }
         
     }//GEN-LAST:event_SolveActionPerformed
 
@@ -352,6 +428,8 @@ public class FinalSolver extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLayeredPane BoardPanel;
     private javax.swing.JComboBox Games;
+    private javax.swing.JPanel Image;
+    private javax.swing.JPanel Image2;
     private javax.swing.JTextArea Instructions;
     private javax.swing.JButton Solve;
     private javax.swing.JScrollPane TextArea;
